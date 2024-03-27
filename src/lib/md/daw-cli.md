@@ -1,0 +1,5 @@
+`DAW Version Control` is a powerful command-line interface tool, designed in Go, that revolutionizes the management of digital audio workstation (DAW) projects. It introduces the concept of version control to audio production, allowing you to track changes, revert to previous versions, and maintain a comprehensive commit history of your projects. 
+
+This tool is perfect for audio engineers and producers who want to harness the power of version control systems commonly used in software development, tailored specifically for audio projects. With `DAW Version Control`, you can efficiently manage changes, collaborate remotely with ease, and store all versions of your project in a remote repository.
+
+Open-source and cross-platform, `DAW Version Control` brings the precision and control of versioning systems to your audio production workflow, enhancing your DAW experience and providing a robust platform for mastering audio projects.
