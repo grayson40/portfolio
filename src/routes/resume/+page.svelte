@@ -10,7 +10,6 @@
 		{#if data}
 			<div class="pdf-container">
 				<object data={data} type="application/pdf" aria-label="Embedded PDF" class="pdf-object">
-					<Chip>PDF not supported</Chip>
 				</object>
 			</div>
 		{:else}
