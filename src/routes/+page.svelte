@@ -19,6 +19,7 @@
 
 <svelte:head>
 	<title>{useTitle(title, titleSuffix)}</title>
+	<script src="https://cdn.amplitude.com/libs/analytics-browser-2.6.2-min.js.gz"></script><script src="https://cdn.amplitude.com/libs/plugin-session-replay-browser-1.1.6-min.js.gz"></script><script src="https://cdn.amplitude.com/libs/plugin-default-event-tracking-advanced-browser-0.8.0-min.js.gz"></script><script>window.amplitude.init('fc9990505e12f9cd00141c1784fd344e');window.amplitude.add(window.sessionReplay.plugin({sampleRate: 1}));window.amplitude.add(window.amplitudeDefaultEventTrackingAdvancedPlugin.plugin());</script>
 </svelte:head>
 <div
 	class="col self-center flex-1 md:flex-row md:slef-stretch justify-center lg:justify-between items-center p-y-0px p-x-10px"
