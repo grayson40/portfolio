@@ -2,6 +2,7 @@
     import { activities, title, description, type LifestyleActivity } from '@data/lifestyle';
     import CommonPage from '$lib/components/CommonPage.svelte';
     import UIcon from '$lib/components/Icon/UIcon.svelte';
+    import { base } from '$app/paths';
     
     let selectedActivity = activities[0];
     let showLightbox = false;
@@ -12,7 +13,7 @@
     }
     
     function openLightbox(imageSrc: string): void {
-        currentImage = imageSrc;
+        currentImage = `${base}${imageSrc}`;
         showLightbox = true;
     }
     
@@ -42,30 +43,50 @@
         
         <!-- Selected Category Header -->
         <div class="category-header">
-            <!-- <UIcon icon={selectedActivity.icon} classes="text-2.5em text-[var(--accent-text)]" />
-            <h2 class="text-2xl font-bold">{selectedActivity.name}</h2> -->
+            <UIcon icon={selectedActivity.icon} classes="text-2.5em text-[var(--accent-text)]" />
+            <h2 class="text-2xl font-bold">{selectedActivity.name}</h2>
         </div>
         
         <!-- Photo Gallery -->
         <div class="photo-gallery">
             {#each selectedActivity.images as image}
-                <div class="gallery-item" on:click={() => openLightbox(image)}>
-                    <img src={image} alt={`${selectedActivity.name} photo`} />
+                <div 
+                    class="gallery-item" 
+                    on:click={() => openLightbox(image)}
+                    on:keydown={(e) => e.key === 'Enter' && openLightbox(image)}
+                    tabindex="0"
+                    role="button"
+                    aria-label="View larger image"
+                >
+                    <img src="{base}{image}" alt={`${selectedActivity.name} photo`} />
                     <div class="gallery-item-overlay">
                         <UIcon icon="i-carbon-zoom-in" classes="text-2em" />
                     </div>
                 </div>
             {/each}
         </div>
+    </div>
     
     <!-- Lightbox for enlarged view -->
     {#if showLightbox}
-        <div class="lightbox" on:click={closeLightbox}>
-            <button class="lightbox-close">
-                <UIcon icon="i-carbon-close" classes="text-2em" />
+        <button 
+            class="lightbox" 
+            on:click={closeLightbox}
+            on:keydown={(e) => e.key === 'Escape' && closeLightbox()}
+            aria-label="Close image lightbox"
+        >
+            <button 
+                class="lightbox-content" 
+                on:click|stopPropagation={() => {}}
+                on:keydown|stopPropagation={() => {}}
+                aria-label="Image container"
+            >
+                <button class="lightbox-close">
+                    <UIcon icon="i-carbon-close" classes="text-2em" />
+                </button>
+                <img src={currentImage} alt="Enlarged view" />
             </button>
-            <img src={currentImage} alt="Enlarged view" />
-        </div>
+        </button>
     {/if}
 </CommonPage>
 
@@ -126,15 +147,7 @@
         border-bottom: 1px solid var(--border);
     }
     
-    .category-description {
-        font-weight: 300;
-        line-height: 1.6;
-        margin-bottom: 2rem;
-        color: var(--tertiary-text);
-        max-width: 900px;
-    }
-    
-    .photo-gallery, .more-images {
+    .photo-gallery {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
         gap: 1.5rem;
@@ -197,18 +210,35 @@
         justify-content: center;
         align-items: center;
         z-index: 1000;
+        border: none;
+        padding: 0;
+        cursor: pointer;
         
-        img {
+        .lightbox-content {
+            position: relative;
             max-width: 90%;
             max-height: 85vh;
-            border-radius: 0.5rem;
-            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            background: transparent;
+            border: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: default;
+            
+            img {
+                max-width: 100%;
+                max-height: 85vh;
+                border-radius: 0.5rem;
+                box-shadow: 0 0 20px rgba(0,0,0,0.5);
+                pointer-events: none;
+            }
         }
         
         .lightbox-close {
             position: absolute;
-            top: 1rem;
-            right: 1rem;
+            top: -2rem;
+            right: 0;
             background: none;
             border: none;
             color: white;

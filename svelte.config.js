@@ -14,7 +14,10 @@ const config = {
 		}
 	},
 	kit: {
-		adapter: adapter({ fallback: '404.html' }),
+		adapter: adapter({ 
+			fallback: 'index.html',
+			precompress: false, 
+		}),
 		alias: {
 			$lib: './src/lib',
 			'@data': './src/lib/data',
@@ -25,6 +28,9 @@ const config = {
 		},
 		paths: {
 			base: process.env.NODE_ENV === 'production' ? base : ''
+		},
+		prerender: {
+			entries: [] // Disable prerendering completely
 		}
 	}
 };

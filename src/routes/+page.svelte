@@ -10,6 +10,7 @@
 	import { getPlatfromIcon } from '$lib/utils';
 	import UIcon from '$lib/components/Icon/UIcon.svelte';
 	import { onMount } from 'svelte';
+	import { base } from '$app/paths';
 	
 	// For animation on scroll
 	let isHeroVisible = true;
@@ -68,7 +69,7 @@
 	<div class="container mx-auto px-4 relative z-10">
 		<div class="flex flex-col md:flex-row items-center justify-between gap-8">
 			<div class="text-center md:text-left md:w-1/2 fade-in-left {isHeroVisible ? 'visible' : ''}">
-				<MainTitle classes="mb-6 text-glow">{name} {lastName},</MainTitle>
+				<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-glow">{name} {lastName},</h1>
 				<div class="description-wrapper">
 					<p class="text-[var(--tertiary-text)] text-[1.2em] font-extralight max-w-2xl mb-6 description-fade-in">
 						{description}
@@ -112,7 +113,7 @@
 				<div class="profile-image-container">
 					<div class="profile-image-frame">
 						<img 
-							src="/about-me.jpg" 
+							src="{base}/about-me.jpg" 
 							alt="Profile Photo" 
 							class="profile-image"
 						/>
@@ -161,21 +162,21 @@
 		
 		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
 			<div class="gallery-item fade-in {isGalleryVisible ? 'visible' : ''}" style="animation-delay: 0.1s">
-				<img src="/gallery/jaco.jpg" alt="Jaco" />
+				<img src="{base}/gallery/jaco.jpg" alt="Jaco" />
 				<div class="gallery-item-caption">
 					<h3>Jaco Falls</h3>
 					<p>Jaco, Costa Rica</p>
 				</div>
 			</div>
 			<div class="gallery-item fade-in {isGalleryVisible ? 'visible' : ''}" style="animation-delay: 0.1s">
-				<img src="/gallery/nosara.jpg" alt="Nosara" />
+				<img src="{base}/gallery/nosara.jpg" alt="Nosara" />
 				<div class="gallery-item-caption">
 					<h3>Nosara</h3>
 					<p>Nosara, Costa Rica</p>
 				</div>
 			</div>
 			<div class="gallery-item fade-in {isGalleryVisible ? 'visible' : ''}" style="animation-delay: 0.1s">
-				<img src="/gallery/mission-beach.jpg" alt="Mission Beach" />
+				<img src="{base}/gallery/mission-beach.jpg" alt="Mission Beach" />
 				<div class="gallery-item-caption">
 					<h3>Mission Beach</h3>
 					<p>Mission Beach, California</p>
@@ -185,7 +186,7 @@
 		</div>
 		
 		<div class="text-center mt-10 fade-up {isGalleryVisible ? 'visible' : ''}">
-			<a href="/gallery" class="gallery-button">
+			<a href="{base}/gallery" class="gallery-button">
 				View All Photos
 				<UIcon icon="i-carbon-arrow-right" classes="ml-2" />
 			</a>
