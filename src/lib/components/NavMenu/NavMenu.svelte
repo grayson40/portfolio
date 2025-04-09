@@ -120,7 +120,7 @@
 		justify-content: center;
 		position: sticky;
 		top: 0px;
-		z-index: 10;
+		z-index: 100;
 		padding: 0px 10px;
 		height: 50px;
 		border-bottom: 1px solid var(--secondary);
@@ -152,17 +152,18 @@
 	}
 
 	.nav-menu-mobile {
-		z-index: -1;
+		z-index: 99;
 		max-height: calc(100vh - 50px - 1px);
 		min-height: calc(100vh - 50px - 1px);
 		width: 100%;
-		position: absolute;
+		position: fixed;
 		background-color: var(--main);
 		top: 51px;
 		transform: translateY(-100vh);
 		transition-property: transform opacity;
 		transition: 400ms ease;
 		opacity: 0;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
 		&-open {
 			opacity: 1;
