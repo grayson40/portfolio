@@ -3,9 +3,11 @@ import { getSkills } from './skills';
 import type { Project } from '../types';
 import daw from '../md/daw-cli.md?raw';
 import tpg from '../md/tpg-studios.md?raw';
-import sculpta from '../md/sculpta-art.md?raw';
 import api from '../md/daw-api.md?raw';
 import dawhub from '../md/dawhub.md?raw';
+import toro from '../md/toro.md?raw'
+import pet from '../md/pet-portrait-app.md?raw'
+import airseek from '../md/airseek.md?raw'
 
 export const items: Array<Project> = [
 	{
@@ -24,19 +26,50 @@ export const items: Array<Project> = [
 		type: 'E-commerce Website'
 	},
 	{
-		slug: 'sculpta-art',
-		color: '#ff3e00',
-		description: sculpta,
+		slug: 'pet-portrait',
+		color: '#5e95e3',
+		description: pet,
 		shortDescription:
-			'An e-commerce platform offering seamless shopping experiences, real-time updates, and secure payments.',
-		links: [{ to: 'https://sculpta-art.vercel.app', label: 'Website' }, { to: 'https://github.com/grayson40/sculpta-art', label: 'GitHub' }],
-		logo: Assets.Svelte,
-		name: 'Sculpta Art',
+			'An AI-powered mobile app for pet owners to capture perfect photos, featuring intelligent sound systems and photo management.',
+		links: [{ to: 'https://pet-portrait.com', label: 'Website' }, { to: 'https://github.com/grayson40/pet-portrait', label: 'GitHub' }],
+		logo: Assets.ReactJs,
+		name: 'Pet Portrait',
 		period: {
-			from: new Date(2024, 2, 1),
+			from: new Date(2025, 1, 1),
 		},
-		skills: getSkills('svelte', 'ts', 'tailwind', 'postgres', 'stripe', 'vercel'),
-		type: 'E-commerce Website'
+		skills: getSkills('reactjs', 'ts', 'tailwind', 'supabase', 'express', 'redis', 'node'),
+		type: 'Mobile App'
+	},
+	{
+		slug: 'toro-eats',
+		color: '#5e95e3',
+		description: toro,
+		shortDescription:
+			'A mobile app landing page that doubles as an admin panel, offering a seamless user experience for food rating and management.',
+		links: [{ to: 'https://toroeats.com', label: 'Website' }, { to: 'https://github.com/Gray-Bay-Solutions/toro-frontend', label: 'GitHub' }],
+		logo: Assets.NextJs,
+		name: 'Toro Eats',
+		period: {
+			from: new Date(2024, 7, 1),
+			to: new Date(2025, 0, 31)
+		},
+		skills: getSkills('reactjs', 'ts', 'tailwind', 'firebase', 'nextjs', 'vercel'),
+		type: 'Admin Dashboard'
+	},
+	{
+		slug: 'airseek',
+		color: '#5e95e3',
+		description: airseek,
+		shortDescription:
+			'AirSeek is a price comparison platform designed specifically for airsoft products. It aggregates prices from major retailers, enabling users to find the best deals effortlessly.',
+		links: [{ to: 'https://airseek.com', label: 'Website' }, { to: 'https://github.com/grayson40/airseek', label: 'GitHub' }],
+		logo: Assets.NextJs,
+		name: 'AirSeek',
+		period: {
+			from: new Date(2025, 0, 30),
+		},
+		skills: getSkills('nextjs', 'reactjs', 'ts', 'tailwind', 'supabase', 'vercel', 'redis', 'express', 'node'),
+		type: 'Web Application'
 	},
 	{
 		slug: 'daw-version-control',

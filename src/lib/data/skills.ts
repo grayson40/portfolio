@@ -60,6 +60,38 @@ export const items = [
 		category: 'markup-style'
 	}),
 	defineSkill({
+		slug: 'tailwind',
+		color: 'purple',
+		description: 'Tailwind CSS is a utility-first CSS framework for creating custom designs without having to leave your HTML.',
+		logo: Assets.Tailwind,
+		name: 'Tailwind CSS',
+		category: 'markup-style'
+	}),
+	defineSkill({
+		slug: 'redis',
+		color: 'red',
+		description: 'Redis is an open-source, in-memory data structure store, used as a database, cache, and message broker.',
+		logo: Assets.Redis,
+		name: 'Redis',
+		category: 'database'
+	}),
+	defineSkill({
+		slug: 'supabase',
+		color: 'green',
+		description: 'Supabase is an open-source Firebase alternative that provides a backend as a service, including database, authentication, and real-time capabilities.',
+		logo: Assets.Supabase,
+		name: 'Supabase',
+		category: 'database'
+	}),
+	defineSkill({
+		slug: 'nextjs',
+		color: 'blue',
+		description: 'Next.js is a React framework that enables functionality such as server-side rendering and generating static websites for React-based web applications.',
+		logo: Assets.NextJs,
+		name: 'Next.js',
+		category: 'framework'
+	}),
+	defineSkill({
 		slug: 'html',
 		color: 'orange',
 		description: 'HTML is the standard markup language for documents designed to be displayed in a web browser.',

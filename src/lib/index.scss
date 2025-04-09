@@ -86,6 +86,7 @@ body {
 	--tertiary-text-hover: var(--light-3);
 	--accent-text: var(--light-3);
 	--accent-text-hover: var(--light-4);
+	--accent-rgb: 193, 193, 193; /* Light-3 in RGB */
 
 	--border: var(--dark-2);
 	--border-hover: var(--light-7);
@@ -121,6 +122,7 @@ body {
 	--tertiary-text-hover: var(--dark-3);
 	--accent-text: var(--dark-3);
 	--accent-text-hover: var(--dark-4);
+	--accent-rgb: 62, 62, 62; /* Dark-3 in RGB */
 
 	--border: var(--light-1);
 	--border-hover: var(--dark-8);

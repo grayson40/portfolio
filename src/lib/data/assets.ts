@@ -81,6 +81,8 @@ const Assets = {
 	Vercel: a('vercel.svg'),
 	GitHub: a('github.svg'),
 	GitLab: a('gitlab.svg'),
+	Supabase: a('supabase.png'),
+	NextJs: a('next.png')
 };
 
 export default Assets;
