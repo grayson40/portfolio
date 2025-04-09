@@ -1,7 +1,9 @@
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/kit/vite';
 
-const base = '/portfolio';
+// Use /portfolio for GitHub Pages, but no base path for Vercel
+const dev = process.env.NODE_ENV === 'development';
+const base = process.env.DEPLOY_TARGET === 'github' ? '/portfolio' : '';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -27,7 +29,7 @@ const config = {
 			'@utils': './src/lib/utils'
 		},
 		paths: {
-			base: process.env.NODE_ENV === 'production' ? base : ''
+			base: dev ? '' : base
 		},
 		prerender: {
 			entries: [] // Disable prerendering completely
