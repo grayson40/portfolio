@@ -29,7 +29,7 @@ export const links: Array<{ platform: Platform; link: string }> = [
 export const skills = getSkills('go', 'python', 'js', 'ts', 'reactjs', 'django', 'docker', 'mysql', 'firebase', 'node', 'svelte', 'express', 'java', 'html', 'c', 'c++');
 
 export const aboutMe = 
-	"Beyond coding, I'm passionate about living a balanced lifestyle that keeps me connected to nature and helps me maintain perspective. Whether catching waves, finding stillness in yoga, or waiting patiently for a bite, these moments away from screens have become my greatest teachers. I'm grateful for how these experiences shape my approach to challenges, as I strive to bring the same qualities of presence, adaptability, and continuous learning to my professional work. These diverse interests have opened unexpected pathways for creative problem-solving and personal growth—a journey that remains ongoing and ever-evolving.";
+	"Beyond coding, I'm passionate about living a balanced lifestyle that keeps me connected to nature and helps me maintain perspective. Whether catching waves, finding stillness in yoga, or waiting patiently for a bite, these moments away from screens have become my greatest teachers.";
 
 export type Interest = {
 	name: string;
